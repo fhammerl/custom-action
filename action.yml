@@ -1,13 +1,24 @@
 name: 'Hello World'
 description: 'Greet someone'
+inputs:
+  custom-bash:  # id of input
+    description: 'One liner?'
+    required: false
+    default: 'echo no-input-given'
 runs:
   using: "composite"
   steps:
     - run: echo Hello X
       shell: bash
-    - run: echo Hello Y && fail 1
+      
+    - id: step1
+      run: echo "::set-output name=test::hello"
+      
+    - run: echo Hello Y && ${{ github.event.inputs.custom-bash }}
       shell: bash
+      
     - run: echo Hello Z
       shell: bash
+      
     - run: echo Hello N!
       shell: bash
