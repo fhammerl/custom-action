@@ -8,18 +8,13 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: echo Hello X
+    - run: echo Hello Success
       shell: bash
+      if: success()      
       
-    - id: step1
-      run: echo "::set-output name=test-out::hello"
+    - run: echo Hello Fail
       shell: bash
+      if: failure()
       
-    - run: echo Hello Y && ${{ inputs.custom-bash }}
-      shell: bash
-      
-    - run: echo Hello Z
-      shell: bash
-      
-    - run: echo Hello N!
+    - run: exit 1
       shell: bash
