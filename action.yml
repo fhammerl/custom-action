@@ -15,7 +15,7 @@ runs:
       run: echo "::set-output name=test-out::hello"
       shell: bash
       
-    - run: echo Hello Y && ${{ github.event.inputs.custom-bash }}
+    - run: echo Hello Y && ${{ inputs.custom-bash }}
       shell: bash
       
     - run: echo Hello Z
