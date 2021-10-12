@@ -1,0 +1,12 @@
+name: 'Hello World'
+description: 'Greet someone'
+runs:
+  steps:
+    - run: echo Hello X
+      shell: bash
+    - run: echo Hello Y
+      shell: bash
+    - run: echo Hello Z
+      shell: bash
+    - run: echo Hello N!
+      shell: bash
