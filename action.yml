@@ -5,9 +5,11 @@ runs:
   steps:
     - run: echo Hello X
       shell: bash
-    - run: echo Hello Y
+    - run: echo Hello Y && fail 1
       shell: bash
+      continue-on-error: true
     - run: echo Hello Z
       shell: bash
+      continue-on-error: true
     - run: echo Hello N!
       shell: bash
