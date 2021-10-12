@@ -12,7 +12,8 @@ runs:
       shell: bash
       
     - id: step1
-      run: echo "::set-output name=test::hello"
+      run: echo "::set-output name=test-out::hello"
+      shell: bash
       
     - run: echo Hello Y && ${{ github.event.inputs.custom-bash }}
       shell: bash
