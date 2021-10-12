@@ -18,3 +18,15 @@ runs:
       
     - run: exit 1
       shell: bash
+      
+    - run: echo Hello Success
+      shell: bash
+      if: success()      
+      
+    - run: echo Hello Fail
+      shell: bash
+      if: failure()
+      
+    - run: echo Hello Always
+      shell: bash
+      if: always()
